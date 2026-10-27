@@ -44,8 +44,9 @@ h3 { font-family: var(--display); font-size: clamp(1.25rem, 2vw, 1.6rem); font-w
 .section--intro { background: var(--paper); }
 .intro { max-width: 860px; text-align: center; }
 .intro h2 { color: var(--ink); }
-.intro h2 span { display: block; }
-.intro h2 span + span { color: #7d7d7d; }
+.intro h2 > span { display: block; }
+.intro__accent { margin-top: .08em; color: var(--pink); font-size: clamp(2.35rem, 4.4vw, 3.55rem); line-height: 1.06; }
+.intro__accent span { display: block; white-space: nowrap; }
 .lead { max-width: 46rem; margin: 0 auto 1.1rem; font-size: clamp(1.1rem, 2.2vw, 1.35rem); }
 
 .section--benefits { background: var(--mist); }
@@ -115,7 +116,7 @@ h3 { font-family: var(--display); font-size: clamp(1.25rem, 2vw, 1.6rem); font-w
 }
 
 @media (min-width: 820px) {
-  .hero { background-position: 67% 25%; }
+  .hero { background-position: 67% 31%; }
   .hero h1 span { white-space: nowrap; }
   .benefit-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .benefit-card:nth-child(1), .benefit-card:nth-child(2) { grid-column: span 1; }
@@ -132,4 +133,5 @@ h3 { font-family: var(--display); font-size: clamp(1.25rem, 2vw, 1.6rem); font-w
   .hero__copy { padding-top: 2.5rem; }
   .wordmark { font-size: clamp(3.6rem, 18vw, 5.2rem); }
   .hero h1 { max-width: 10ch; }
+  .intro__accent span { white-space: normal; }
 }
