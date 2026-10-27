@@ -36,7 +36,7 @@ h3 { font-family: var(--display); font-size: clamp(1.25rem, 2vw, 1.6rem); font-w
 .hero__intro { max-width: 28rem; margin-bottom: 1rem; font-family: var(--display); font-size: clamp(1.13rem, 2.3vw, 1.45rem); font-weight: 700; line-height: 1.35; }
 .hero__body { max-width: 44rem; margin-bottom: 1.35rem; font-size: clamp(1rem, 1.8vw, 1.16rem); }
 .date-line, .closing__date { font-family: var(--display); font-weight: 700; }
-.date-line__separator { display: inline-block; margin-inline: .32em; }
+.date-line__separator { display: inline-block; }
 .button { display: inline-flex; align-items: center; justify-content: center; min-height: 3.7rem; margin-top: 1.25rem; padding: .9rem 1.55rem; border-radius: .65rem; font-family: var(--display); font-size: .96rem; font-weight: 800; line-height: 1.25; text-align: center; text-decoration: none; transition: transform .2s ease, background-color .2s ease; }
 .button:hover, .button:focus-visible { transform: translateY(-2px); }
 .button--primary { color: white; background: var(--pink); box-shadow: 0 1rem 2.25rem rgba(0, 0, 0, .24); }
