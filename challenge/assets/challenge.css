@@ -35,3 +35,27 @@
 .support--text h2{margin-inline:auto}
 .support--text p:not(.eyebrow):not(.support__note){margin-inline:auto}
 .support--text .support__actions{justify-content:center}
+
+/* Challenge-Ablauf: zwei Etappen und separate Reflexion. */
+.section--how{padding-block:clamp(3rem,6vw,5rem)}
+.how-overview{max-width:1000px}
+.how-overview>h2{max-width:20ch;font-size:clamp(2.2rem,5vw,3.5rem);margin-bottom:1.4rem}
+.how-intro{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2rem;align-items:center;margin-bottom:1.6rem}
+.how-intro>p{max-width:37rem;margin:0;font-size:1rem}
+.how-guide{max-width:19rem}
+.how-guide .button{margin:0}
+.routine-setup{margin:0 0 .7rem;padding:1rem 1.2rem;border-radius:.6rem;background:var(--pink-soft);font-size:.95rem}
+.routine-duration{margin:0 0 1.8rem;font-size:.95rem}
+.routine-title{margin:0 0 1.2rem;font-family:var(--display);font-size:1.5rem;font-weight:800;letter-spacing:-.04em;line-height:1.2}
+.routine-phases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem}
+.routine-phase{padding:1.5rem;border:1px solid var(--line);border-radius:.7rem}
+.routine-phase h4{margin:0 0 1.2rem;font-family:var(--display);font-size:1.15rem;line-height:1.25;font-weight:800;letter-spacing:-.035em}
+.routine-phase-steps{display:grid;gap:1rem;list-style:none;margin:0;padding:0}
+.routine-phase-steps li{display:grid;grid-template-columns:1.4rem minmax(0,1fr);gap:.6rem;align-items:start}
+.routine-phase-steps li>span{color:var(--pink);font-family:var(--display);font-weight:800;font-size:.85rem;line-height:1.65}
+.routine-phase-steps p{margin:0;font-size:.95rem;line-height:1.55}
+.routine-tracking{display:flex;align-items:center;gap:1rem;margin-top:1.2rem;padding:1.25rem 1.5rem;border-radius:.7rem;background:var(--pink-soft)}
+.routine-tracking-number{display:grid;place-items:center;flex-shrink:0;width:2rem;height:2rem;border-radius:50%;background:var(--pink);color:#fff;font-family:var(--display);font-weight:800;font-size:.85rem}
+.routine-tracking h4{margin:0 0 .35rem;font-family:var(--display);font-size:1rem;font-weight:800;line-height:1.3}
+.routine-tracking p{margin:0;font-size:.95rem;line-height:1.55}
+@media(max-width:700px){.how-intro{grid-template-columns:1fr;gap:1.1rem}.how-guide{max-width:none}.routine-phases{grid-template-columns:1fr}.routine-phase{padding:1.25rem}.routine-tracking{padding:1.2rem;align-items:flex-start}.how-overview>h2{max-width:18ch}}
