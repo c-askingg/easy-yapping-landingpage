@@ -7,7 +7,7 @@ Stand: 2. November 2026. Seite: `challenge/index.html`.
 - Woche 1: „Dich als Unternehmerin warmsprechen“. Live-Inhalte bleiben im Call und Worksheet.
 - Alle sieben Aufgaben vorhanden; Tag 7 aus der gelieferten Tagesaufgaben-PDF übernommen.
 - Einseitiger Guide und ausfüllbares Wochen-Worksheet eingebunden.
-- Zoom-Buttons: dokumentierter Raum für alle Events mit Angela (Produkte/Bestseller Profit Lounge/Zoom-Links.md).
+- Beide Zoom-Buttons: https://zoom.us/j/85957266266 — Meeting-ID 859 5726 6266, kein Kenncode nötig. Von Chris am 2. November 2026 anhand der Starter-Call-Einladungsmail bestätigt. Der zuvor aus der Profit Lounge übernommene Angela-Raum 87312014360 ist für Easy Yapping falsch.
 - Support: support@expertenbuch-akademie.de. Antwortversprechen: innerhalb von 24 Stunden.
 - Ausschließlich Woche 1 im ausgelieferten HTML/JS. Keine zukünftigen Wochen oder Aufgaben in öffentlichen Assets vorhalten.
 - Aufzeichnungen und Abschlussangebot vorbereitet und verborgen. Keine Demo-Zahlen oder Namensboards.
