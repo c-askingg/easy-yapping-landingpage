@@ -1,11 +1,11 @@
 # Easy Yapping - Stand für die weitere Pflege auf GitHub
 
-Stand: 1. November 2026. Seite: `challenge/index.html`.
+Stand: 2. November 2026. Seite: `challenge/index.html`.
 
 ## Fertiger Seitenstand
 - Bestehende Gestaltung; Tagesimpuls vor Daily-Tracking, Einstieg „Jeden Tag wird’s leichter.“.
-- Woche 1: „Sich als Unternehmerin warm sprechen“. Live-Inhalte bleiben im Call und Worksheet.
-- Sechs bestätigte Aufgaben; Tag 7 als noch zu ergänzen gekennzeichnet.
+- Woche 1: „Dich als Unternehmerin warmsprechen“. Live-Inhalte bleiben im Call und Worksheet.
+- Alle sieben Aufgaben vorhanden; Tag 7 aus der gelieferten Tagesaufgaben-PDF übernommen.
 - Einseitiger Guide und ausfüllbares Wochen-Worksheet eingebunden.
 - Zoom-Buttons: dokumentierter Raum für alle Events mit Angela (Produkte/Bestseller Profit Lounge/Zoom-Links.md).
 - Support: support@expertenbuch-akademie.de. Antwortversprechen: innerhalb von 24 Stunden.
@@ -13,8 +13,6 @@ Stand: 1. November 2026. Seite: `challenge/index.html`.
 - Aufzeichnungen und Abschlussangebot vorbereitet und verborgen. Keine Demo-Zahlen oder Namensboards.
 
 ## Später auf GitHub ergänzen
-- Tag 7: Aufgabe von Gela eintragen (`#w1-siebter-tag`).
-- WhatsApp-Gruppenlink im Supportbereich einsetzen.
 - Zeitzone der Live-Termine bestätigen. Termine bleiben unverändert: 2., 9., 16., 23. und 30. November, jeweils 15 Uhr.
 - 30 Aufgabentage ab 3. November reichen bis 2. Dezember; Abschlusscall am 30. November bestätigen.
 - Aufzeichnungen erst mit echtem Video-Link freigeben; dann auch `recordings-nav` einblenden.
@@ -37,3 +35,10 @@ Im Jotform-Verwaltungsbereich noch umsetzen bzw. prüfen:
 ## Pflege und Prüfung
 Mobile Ansicht bei 390 Pixeln, Aufgaben-Akkordeons, interne Anker und Assets geprüft. Worksheet-Download im Browser getestet; Guide als eine A4-Seite visuell geprüft.
 Für künftige Änderungen direkt diese Dateien auf GitHub bearbeiten. Die lokale Vorschau ist keine Veröffentlichung.
+
+## Materialien und WhatsApp aktualisiert (2. November)
+- Neues ausfüllbares Worksheet unverändert unter assets/worksheet-woche-1.pdf eingebunden.
+- Gelieferte Tagesaufgaben-PDF unverändert in assets/easy-yapping_Woche-1_Tagesaufgaben.pdf; eigener Downloadbutton bei den Tagesimpulsen.
+- WhatsApp-Gruppenbutton mit Chris’ übergebenem Einladungslink aktiv.
+- Tag 7 anhand der Tagesaufgaben-PDF ergänzt.
+- Tägliche Routine bleibt wie freigegeben.
