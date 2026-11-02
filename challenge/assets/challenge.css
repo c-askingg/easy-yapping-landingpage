@@ -29,3 +29,9 @@
 .call-context{margin:.8rem 0 0;font-size:.92rem}.routine-time{margin:1.2rem 0 0;font-size:.9rem}
 .support__pending{padding:.8rem 1rem;border:1px solid #777;border-radius:.5rem;font-size:.9rem!important;margin:0!important}
 @media(min-width:760px){.hero__content{min-height:590px;padding-top:3rem;padding-bottom:3.5rem}.daily-panel h2{font-size:2rem}}
+
+/* Support ohne Porträt: Text und Kontakt zentral ausrichten. */
+.support--text .support__inner{display:block;max-width:850px;text-align:center}
+.support--text h2{margin-inline:auto}
+.support--text p:not(.eyebrow):not(.support__note){margin-inline:auto}
+.support--text .support__actions{justify-content:center}
