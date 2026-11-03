@@ -69,3 +69,8 @@
 .routine-entry h3{margin:0 0 .5rem;font:800 1rem/1.3 var(--display);letter-spacing:-.025em}
 .routine-entry p{margin:0;font-size:.95rem;line-height:1.55}
 @media(max-width:700px){.routine-entry{grid-template-columns:1fr;gap:.8rem}.routine-entry article{padding:1.1rem 1.25rem}}
+
+/* Welcome unter dem Titel, kompakt im bestehenden Header. */
+.hero-welcome{position:relative;width:min(100%,24rem);aspect-ratio:16/9;margin-top:1rem;overflow:hidden;border-radius:.7rem;background:#17251f}
+.hero-welcome iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+@media(max-width:759px){.hero__content{padding-top:1.25rem;padding-bottom:1.25rem;gap:1rem}.hero__day{margin-bottom:.75rem}.hero h1{font-size:clamp(2.2rem,8vw,3.5rem);margin-bottom:.6rem}.hero-welcome{width:min(100%,15rem);margin-top:.75rem}.daily-panel{padding:1.25rem}.daily-panel h2{font-size:1.75rem}.daily-panel>.button{margin-top:.65rem;margin-bottom:.4rem}}
