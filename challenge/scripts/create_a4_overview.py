@@ -1,48 +1,54 @@
+"""Build the one-page guide from content/guide.json with embedded brand fonts."""
 from pathlib import Path
-from reportlab.lib import colors
+from html import escape
+import json, argparse
+from reportlab.pdfgen import canvas
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.lib.colors import HexColor
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle
-from reportlab.lib.units import mm
-from reportlab.pdfgen import canvas
 from reportlab.platypus import Paragraph
-OUT=Path(__file__).resolve().parents[1]/'assets/so-gehts-easy-yapping.pdf'
-PINK=colors.HexColor('#AB2E6C'); INK=colors.HexColor('#111111')
-W,H=A4; M=17*mm
 
-def text(c,s,x,y,width,size=10,leading=14,bold=False,color=INK):
-    p=Paragraph(s,ParagraphStyle('p',fontName='Helvetica-Bold' if bold else 'Helvetica',fontSize=size,leading=leading,textColor=color))
-    _,h=p.wrap(width,1000);p.drawOn(c,x,y-h);return y-h
-
-def block(c,title,body,y):
-    y=text(c,title,M,y,W-2*M,13,17,True,PINK)-3*mm
-    for s in body:y=text(c,s,M,y,W-2*M,10,14)-2*mm
-    return y-4*mm
-
-def main():
-    c=canvas.Canvas(str(OUT),pagesize=A4);c.setTitle('Easy Yapping Guide');c.setAuthor('EXPERTENBUCH Akademie')
-    c.setFillColor(PINK);c.setFont('Helvetica-Bold',22);c.drawString(M,H-M-5*mm,'easy yapping')
-    y=text(c,'Dein Easy Yapping Guide',M,H-39*mm,W-2*M,25,29,True)-4*mm
-    y=text(c,'30 Tage. 30 Sprechreels. Deine Themen, deine Stimme und ein täglicher Schritt nach draußen.',M,y,W-2*M,11,15)-7*mm
-    y=block(c,'Deine tägliche Routine',[
-        '<b>1.</b> Öffne die Challenge-Seite und wähle einen Tagesimpuls der aktuellen Woche.',
-        '<b>2.</b> Nimm dein kurzes Sprechreel auf und veröffentliche es. Zeitrahmen: <b>10-20 Minuten</b>.',
-        '<b>3.</b> Öffne das <b>Daily-Tracking</b>: Datum und Reel-Link eintragen, dein Gefühl auf der Skala festhalten und die Wochenfrage beantworten. Anschließend etwa <b>zwei Minuten</b> Mini-Reflexion; weitere Gedanken kannst du freiwillig ergänzen.'
-    ],y)
-    y=block(c,'Eine Woche nach der anderen',[
-        'Woche 1 ist im Starter-Call zugänglich. Weitere Wochen werden nacheinander freigeschaltet. Innerhalb deiner freigeschalteten Woche kannst du die Aufgaben frei wählen.',
-        'Die tägliche E-Mail führt dich oben auf die Challenge-Seite. Dort findest du Tagesimpulse, Material und Call-Zugänge.'
-    ],y)
-    y=block(c,'Deine Live-Termine',[
-        '<b>Montag, 2. November 2026, 15 Uhr:</b> Starter-Call.',
-        '<b>9., 16. und 23. November, jeweils 15 Uhr:</b> Fragen, Erfahrungen und ein Impuls von Gela. <b>30. November, 15 Uhr:</b> Abschlusscall.',
-        'Die tägliche Challenge beginnt am <b>3. November</b> und läuft 30 Tage. Die Zeitzone der Call-Termine und die Zugangslinks werden auf der Seite ergänzt.'
-    ],y)
-    y=block(c,'Material und Begleitung',[
-        'Dieser Guide bündelt die Organisation. Zu jeder Woche gibt es ein A4-Worksheet zum Ausdrucken und digitalen Ausfüllen. Woche 1: <b>Dein Coffeedate</b>. Aufzeichnungen findest du nach Bereitstellung auf der Challenge-Seite.',
-        'Gela macht selbst mit und teilt ihre Beispielvideos in der eigenen WhatsApp-Gruppe. Dort ist Raum für Austausch und gegenseitige Unterstützung. Deine Reels kannst du freiwillig teilen.'
-    ],y)
-    if y<20*mm:raise ValueError('Inhalt reicht über den vorgesehenen Seitenraum hinaus')
-    c.setStrokeColor(colors.HexColor('#D9D3D5'));c.line(M,18*mm,W-M,18*mm)
-    text(c,'Easy Yapping | Organisatorischer Begleiter | Prüfstand 1. November 2026',M,15*mm,W-2*M,8,10)
-    c.save()
-if __name__=='__main__':main()
+ROOT = Path(__file__).resolve().parents[1]
+parser=argparse.ArgumentParser(description='Einseitigen Guide mit den Brand-Schriften erzeugen.')
+parser.add_argument('--font-dir',type=Path,required=True,help='Verzeichnis mit Raleway-Regular-Full.ttf und Montserrat-Bold-Full.ttf')
+FONTS=parser.parse_args().font_dir
+pdfmetrics.registerFont(TTFont('Raleway', str(FONTS/'Raleway-Regular-Full.ttf')))
+pdfmetrics.registerFont(TTFont('RalewayBold', str(FONTS/'Montserrat-Bold-Full.ttf')))
+pdfmetrics.registerFont(TTFont('Montserrat', str(FONTS/'Montserrat-Bold-Full.ttf')))
+pdfmetrics.registerFontFamily('Raleway', normal='Raleway', bold='RalewayBold')
+PINK = HexColor('#AB2E6C'); INK = HexColor('#171717')
+styles = {
+    'head': ParagraphStyle('head', fontName='Montserrat', fontSize=14, leading=16, textColor=PINK, spaceAfter=7),
+    'body': ParagraphStyle('body', fontName='Raleway', fontSize=8.8, leading=11, textColor=INK, spaceAfter=3),
+    'accent': ParagraphStyle('accent', fontName='RalewayBold', fontSize=9.5, leading=12, textColor=PINK, spaceAfter=4),
+}
+data=json.loads((ROOT/'content/guide.json').read_text())
+cards=[[(part['style'],Paragraph(part['html'],styles[part['style']])) for part in card] for card in data]
+w,h=A4; margin=31;gap=14;padding=10;cw=(w-2*margin-gap)/2; inner=cw-2*padding
+heights=[]
+for parts in cards:
+    heights.append(sum(p.wrap(inner,1000)[1]+styles[k].spaceAfter for k,p in parts)+2*padding-5)
+rows=[max(heights[i:i+2]) for i in (0,2,4)]
+start=h-100
+assert start-sum(rows)-2*gap>43,(rows,start-sum(rows)-2*gap)
+out=ROOT/'assets/so-gehts-easy-yapping.pdf'
+c=canvas.Canvas(str(out),pagesize=A4)
+c.setTitle('easy yapping Guide'); c.setAuthor('EXPERTENBUCH Akademie')
+c.setFillColor(PINK);c.setFont('Montserrat',27);c.drawCentredString(w/2,h-48,'easy yapping Guide')
+c.setStrokeColor(PINK);c.setLineWidth(1.3);c.line(w/2-94,h-60,w/2+94,h-60)
+c.setFillColor(INK);c.setFont('RalewayBold',10);c.drawCentredString(w/2,h-78,'Dein Überblick für 30 Tage Sprechen und Veröffentlichen')
+y=start
+for ri,rh in enumerate(rows):
+    for ci in (0,1):
+        x=margin+ci*(cw+gap)
+        c.setStrokeColor(HexColor('#D1D3D6'));c.setLineWidth(.7);c.rect(x,y-rh,cw,rh)
+        py=y-padding
+        for kind,p in cards[ri*2+ci]:
+            _,ph=p.wrap(inner,1000);p.drawOn(c,x+padding,py-ph);py-=ph+styles[kind].spaceAfter
+        assert py>=y-rh+padding-5
+    y-=rh+gap
+c.setFillColor(INK);c.setFont('Raleway',8);c.drawCentredString(w/2,19,'Copyright 2026 | EXPERTENBUCH Akademie')
+c.showPage();c.save()
+print('One A4 page; row heights:', rows)
