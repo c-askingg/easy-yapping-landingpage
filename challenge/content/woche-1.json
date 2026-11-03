@@ -1,0 +1,52 @@
+{
+  "week": 1,
+  "title": "Dich als Unternehmerin warmsprechen",
+  "tasks": [
+    {
+      "day": 1,
+      "id": "w1-commitment",
+      "title": "Dein Yapping-Commitment",
+      "paragraphs": ["Kündige deinen 30-Tage-Rahmen an: Ab heute veröffentlichst du jeden Tag ein kurzes Video zu deinem Thema. Lade Menschen ein, dir zu folgen, und mach Lust auf die kommenden Tage."],
+      "example": "„Ab heute gibt es hier jeden Tag ein kleines Video für dich zum Thema xy. Mindestens 30 Tage lang. Wenn dich das Thema interessiert, dann folge mir unbedingt und freu dich auf die nächsten Tage. Ich freu mich voll auf diese Challenge. Bis morgen.“"
+    },
+    {
+      "day": 2,
+      "id": "w1-zielgruppe",
+      "title": "Wer ist hier richtig?",
+      "paragraphs": ["Sprich die Menschen direkt an, für die deine Arbeit gedacht ist. Stell dich kurz vor und lade sie ein, dir per DM zu schreiben, was sie gerade beschäftigt."],
+      "example": "„Wenn du …, bist du hier goldrichtig. Folge mir, [dein Name], und schick mir gern per DM, was dich beschäftigt.“"
+    },
+    {
+      "day": 3,
+      "id": "w1-frage",
+      "title": "Die meistgestellte Frage",
+      "paragraphs": ["Nimm eine Frage auf, die dir aus deiner Zielgruppe immer wieder begegnet. Beantworte sie klar und in deinen Worten. Lade anschließend dazu ein, dir für weitere tägliche Impulse zu deinem Thema zu folgen."],
+      "example": "„Die Frage, die mir am häufigsten gestellt wird, ist … Meine Antwort darauf ist immer gleich: … [Antwort]. Folge mir gern für tägliche Impulse zum Thema xy.“"
+    },
+    {
+      "day": 4,
+      "id": "w1-insight",
+      "title": "Insight aus dieser Woche",
+      "paragraphs": ["Teile eine Begegnung, ein Learning, eine gestellte Frage oder eine Situation aus deiner Arbeit, einem Coaching oder deinem Alltag. Erzähl, was passiert ist und welchen Gedanken du daraus mitgenommen hast. Ein konkreter Ausschnitt reicht."]
+    },
+    {
+      "day": 5,
+      "id": "w1-wochenende",
+      "title": "Wochenend-Arbeit",
+      "paragraphs": ["Erzähl, ob und was du am Wochenende arbeitest und warum du es genau so machst. Schließe mit der Frage ab, zu welchem Team dein Gegenüber in Sachen Wochenend-Arbeit gehört."]
+    },
+    {
+      "day": 6,
+      "id": "w1-buchempfehlung",
+      "title": "Buchempfehlung",
+      "paragraphs": ["Stell ein Buch mit Bezug zu deiner Arbeit vor: ein Lieblingsbuch, eines, das dich schon lange begleitet, oder deine neueste Buchentdeckung.", "Warum gerade dieses Buch? Warum ist es dir wichtig, und was macht es mit dir? Du kannst auch mehrere Bücher vorstellen – dann noch kürzer und knackiger."]
+    },
+    {
+      "day": 7,
+      "id": "w1-siebter-tag",
+      "title": "Erzähl etwas über die Menschen, die zu dir kommen",
+      "paragraphs": ["Erzähl von den Menschen, die mit dir arbeiten: Was verbindet sie, und mit welchen Anliegen kommen sie zu dir?"],
+      "example": "„Die Menschen, die zu mir kommen, …“"
+    }
+  ]
+}
